@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#141e30,#243b55);
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  width: 90%;
+  max-width: 350px;
+}
+
+.card input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
+}
+
+.card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: #00c6ff;
+  color: white;
+  cursor: pointer;
+}
+
+.game {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* CENTER HORIZONTALLY */
+  justify-content: flex-start;
+  padding: 20px;
+  color: white;
+}
+
+.leaderboard {
+  background: rgba(255,255,255,0.2);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: min(95vw, 600px);   /* FULL WIDTH RESPONSIVE */
+  margin-top: 30px;
+}
+
+.cell {
+  background: white;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  font-size: clamp(32px, 8vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.cell:hover {
+  transform: scale(1.08);
+}
+
+.restart {
+  padding: 10px 25px;
+  border-radius: 8px;
+  background: #00c853;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.winner {
+  color: #00ffcc;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+  .board {
+    width: 95vw;
+  }
+}
+
+
+
+
+.winning {
+  background: #00ffcc !important;
+  color: black !important;
+  animation: glow 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #00ffcc;
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 0 25px #00ffcc;
+    transform: scale(1.1);
+  }
+}
