@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
 import "./App.css";
 
-const socket = io(`http://${window.location.hostname}:5000`);
+const socket = io("https://mern-multiplayer-game.onrender.com");
 
 function App() {
   const [roomId, setRoomId] = useState("");
